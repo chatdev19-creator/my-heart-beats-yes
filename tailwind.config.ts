@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['Dancing Script', 'cursive'],
+        body: ['Poppins', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,6 +51,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        valentine: {
+          rose: "hsl(var(--valentine-rose))",
+          pink: "hsl(var(--valentine-pink))",
+          blush: "hsl(var(--valentine-blush))",
+          cream: "hsl(var(--valentine-cream))",
+          deep: "hsl(var(--valentine-deep))",
+          gold: "hsl(var(--valentine-gold))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -65,25 +77,39 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "valentine-pulse": {
+          "0%, 100%": { transform: "scale(1)", boxShadow: "0 0 0 0 hsl(345 100% 58% / 0.4)" },
+          "50%": { transform: "scale(1.03)", boxShadow: "0 0 20px 8px hsl(345 100% 58% / 0)" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        "heartbeat": {
+          "0%, 100%": { transform: "scale(1)" },
+          "25%": { transform: "scale(1.15)" },
+          "40%": { transform: "scale(1)" },
+          "60%": { transform: "scale(1.1)" },
+        },
+        "letter-reveal": {
+          "0%": { opacity: "0", transform: "translateY(40px) scale(0.95)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "valentine-pulse": "valentine-pulse 2s ease-in-out infinite",
+        "float": "float 3s ease-in-out infinite",
+        "heartbeat": "heartbeat 1.2s ease-in-out infinite",
+        "letter-reveal": "letter-reveal 0.6s ease-out forwards",
       },
     },
   },
