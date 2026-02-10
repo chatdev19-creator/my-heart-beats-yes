@@ -74,21 +74,21 @@ const ConfettiCanvas = ({ active, duration = 4000, onComplete }: ConfettiCanvasP
 
     // Adaptive particle count based on device capability
     const cores = navigator.hardwareConcurrency || 2;
-    const maxParticles = Math.min(cores * 25, 150);
+    const maxParticles = Math.min(cores * 40, 250);
 
     particlesRef.current = [];
     startTimeRef.current = Date.now();
 
     // Spawn particles in bursts
     const spawnBurst = () => {
-      const count = Math.min(maxParticles - particlesRef.current.length, 20);
+      const count = Math.min(maxParticles - particlesRef.current.length, 35);
       for (let i = 0; i < count; i++) {
         particlesRef.current.push(createParticle(canvas.width, canvas.height));
       }
     };
 
     spawnBurst();
-    const spawnInterval = setInterval(spawnBurst, 300);
+    const spawnInterval = setInterval(spawnBurst, 200);
 
     const animate = () => {
       const elapsed = Date.now() - startTimeRef.current;
