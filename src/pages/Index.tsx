@@ -105,7 +105,7 @@ const Index = () => {
         </p>
 
         {/* Futuristic Buttons */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full max-w-sm">
+        <div className="flex flex-col sm:flex-row items-center sm:gap-6 w-full max-w-sm gap-[16px]">
           {/* YES button — futuristic neon */}
           <button onClick={handleYes} disabled={buttonsDisabled} className={`
               w-full sm:w-auto flex-1 px-10 py-5 rounded-2xl text-xl font-bold
