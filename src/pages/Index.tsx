@@ -108,7 +108,7 @@ const Index = () => {
         <div className="flex flex-col sm:flex-row items-center sm:gap-6 w-full max-w-sm gap-[16px]">
           {/* YES button — futuristic neon */}
           <button onClick={handleYes} disabled={buttonsDisabled} className={`
-              w-full sm:w-auto flex-1 px-10 py-5 rounded-2xl text-xl font-bold
+              heart-button text-sm font-bold
               btn-futuristic-yes text-primary-foreground
               transition-all duration-300
               disabled:opacity-60 disabled:cursor-not-allowed

@@ -122,8 +122,8 @@
 
   /* Heart-shaped button */
   .heart-button {
-    width: 120px;
-    height: 110px;
+    width: 80px;
+    height: 75px;
     clip-path: path('M60 95 C60 95 10 65 10 35 A25 25 0 0 1 60 20 A25 25 0 0 1 110 35 C110 65 60 95 60 95Z');
     display: flex;
     align-items: center;
