@@ -124,7 +124,7 @@ const Index = () => {
             onClick={handleYes}
             disabled={buttonsDisabled}
             className={`
-              w-full sm:w-auto flex-1 px-10 py-5 rounded-2xl text-xl font-bold
+              heart-button px-6 py-4 text-base font-bold
               btn-futuristic-yes text-primary-foreground
               transition-all duration-300
               disabled:opacity-60 disabled:cursor-not-allowed
