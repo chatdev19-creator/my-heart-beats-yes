@@ -122,13 +122,13 @@
 
   /* Heart-shaped button */
   .heart-button {
-    width: 80px;
-    height: 75px;
-    clip-path: path('M60 95 C60 95 10 65 10 35 A25 25 0 0 1 60 20 A25 25 0 0 1 110 35 C110 65 60 95 60 95Z');
+    width: 100px;
+    height: 90px;
+    clip-path: path('M50 80 C50 80 5 55 5 30 A22 22 0 0 1 50 15 A22 22 0 0 1 95 30 C95 55 50 80 50 80Z');
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 10px;
+    padding-top: 8px;
   }
 
   /* Futuristic neon glow buttons */
