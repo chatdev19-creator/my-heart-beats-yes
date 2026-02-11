@@ -101,7 +101,7 @@ const Index = () => {
           Will You Be My Valentine?
         </h1>
         <p className="text-muted-foreground text-center text-lg sm:text-xl max-w-md mb-12 font-light">
-          I've been meaning to ask you this for a while… 💕
+          I've been meaning to ask you this for a while sifen … 💕
         </p>
 
         {/* Futuristic Buttons */}
