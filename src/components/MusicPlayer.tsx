@@ -5,27 +5,28 @@ export function useMusicPlayer() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const getAudio = useCallback(() => {
-    if (!audioRef.current) {
-      const audio = new Audio(valentineMusic);
-      audio.loop = true;
-      audio.volume = 0.5;
-      audio.addEventListener("ended", () => setIsPlaying(false));
-      audioRef.current = audio;
-    }
-    return audioRef.current;
+  useEffect(() => {
+    const audio = new Audio(valentineMusic);
+    audio.loop = true;
+    audio.volume = 0.5;
+    audio.addEventListener("ended", () => setIsPlaying(false));
+    audioRef.current = audio;
+
+    return () => {
+      audio.pause();
+      audio.removeEventListener("ended", () => setIsPlaying(false));
+      audioRef.current = null;
+    };
   }, []);
 
   const play = useCallback(() => {
-    const audio = getAudio();
-    audio.play().then(() => setIsPlaying(true)).catch(() => {});
-  }, [getAudio]);
+    audioRef.current?.play().then(() => setIsPlaying(true)).catch(() => {});
+  }, []);
 
   const stop = useCallback(() => {
-    const audio = audioRef.current;
-    if (audio) {
-      audio.pause();
-      audio.currentTime = 0;
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
     }
     setIsPlaying(false);
   }, []);
@@ -38,13 +39,6 @@ export function useMusicPlayer() {
       play();
     }
   }, [isPlaying, play]);
-
-  useEffect(() => {
-    return () => {
-      audioRef.current?.pause();
-      audioRef.current = null;
-    };
-  }, []);
 
   return { isPlaying, play, stop, toggle };
 }
