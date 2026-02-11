@@ -121,7 +121,7 @@ const Index = () => {
 
           {/* NO button — futuristic glass, dodges on interaction */}
           <button ref={noBtnRef} disabled={buttonsDisabled} onPointerEnter={dodgeNo} onMouseEnter={dodgeNo} onTouchStart={dodgeNo} onFocus={dodgeNo} className={`
-              w-full sm:w-auto flex-1 px-10 py-5 rounded-2xl text-xl font-bold
+              px-6 py-2 rounded-xl text-sm font-bold
               btn-futuristic-no text-muted-foreground
               transition-all duration-300 ease-out
               disabled:opacity-60 disabled:cursor-not-allowed
